@@ -40,6 +40,7 @@ class Saver:
             # car_class = trip.get("class_name")  # don't need it for now
             car_class_name = trip.get("class_text")
             price = trip.get("price")
+            waiting_time = trip.get("waiting_time")
             # min_price = trip.get("min_price")  # don't need it for now
             worksheet.append_row(
                 [
@@ -49,9 +50,10 @@ class Saver:
                     time,
                     car_class_name,
                     price,
+                    waiting_time,
                     trip_time_sec,
                     trip_time_min,
-                    distance,
+                    round(distance, 2),
                 ],
             )
 
